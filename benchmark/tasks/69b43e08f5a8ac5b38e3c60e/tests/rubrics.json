@@ -1,0 +1,7 @@
+{
+  "task_id": "69b43e08f5a8ac5b38e3c60e",
+  "prompt": "Determine the net charge of the ligand as it exists in the Zn(II)-coordinated complex in PDB 7KYF. Provide the answer as a single number with sign (for example: +3, -2...).",
+  "ground_truth": "",
+  "outcome_rubrics": [],
+  "process_rubrics": []
+}

@@ -1,0 +1,7 @@
+{
+  "task_id": "69b43e08f5a8ac5b38e3c63b",
+  "prompt": "The PDB entry 6ZE8 describes the co-crystal structure of hCHIT1 with compound X. Consider only chain A. \n\nWhat is the net charge of the protein-bound compound X? Provide the answer as an integer with sign (for example: +2, -3).",
+  "ground_truth": "",
+  "outcome_rubrics": [],
+  "process_rubrics": []
+}

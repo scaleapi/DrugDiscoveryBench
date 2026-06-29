@@ -1,0 +1,7 @@
+{
+  "task_id": "69b03699a937c74c3ac4222c",
+  "prompt": "I would like you to list all available structures, if any, that are solved by EM, contain RNA and protein, in which RNA forms a quadruplex, and in which the protein is an isomerase, as of February 2026.",
+  "ground_truth": "",
+  "outcome_rubrics": [],
+  "process_rubrics": []
+}

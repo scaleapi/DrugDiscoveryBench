@@ -1,0 +1,23 @@
+# API key files and secrets
+pub-puls-evals
+*.key
+.env
+
+# Harbor run output
+jobs/
+smoke_runs/
+
+# Eval results
+results/
+viewers/
+
+# Python bytecode
+__pycache__/
+*.pyc
+
+# Local tooling / OS cruft
+.DS_Store
+.claude/
+
+# local verifier debug trace (answer/trajectory for offline judge runs)
+verifier_debug_trace/

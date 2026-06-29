@@ -1,0 +1,7 @@
+{
+  "task_id": "69e6b5dade74c4d1f5fa9351",
+  "prompt": "In the co-crystal structure described by PDB entry 1N5X, what is the net charge state of the protein-bound ligand TEI? Consider only chain A. Provide the answer as a number with sign (for example: +2, -3).",
+  "ground_truth": "",
+  "outcome_rubrics": [],
+  "process_rubrics": []
+}

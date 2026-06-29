@@ -1,0 +1,7 @@
+{
+  "task_id": "69b34fde93a696047cbf9c6d",
+  "prompt": "In the PDB entry 7BUC, what is the sum of the number of H-bond(s) and salt bridge(s) does the ligand X make? Count all intermolecular and intramolecular interactions, and consider only chain A. Provide the answer as an integer.\n\nLigand X SMILES string (protonated form): CC1=CC(NC)=NC(NC2=CC=C(OC)C(C3=CC\\[NH2+\\]CCC3)=C2)=\\[NH+\\]1\n\nH-bond criteria: distance between heavy atoms =&lt; 4.0 angstrom, D-H...A angle &gt; 100°.\n\nSalt bridge criteria: distance between heavy atoms =&lt; 4.0 angstrom.",
+  "ground_truth": "",
+  "outcome_rubrics": [],
+  "process_rubrics": []
+}

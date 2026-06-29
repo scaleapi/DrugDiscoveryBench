@@ -1,0 +1,7 @@
+{
+  "task_id": "69fa3ea7653acbc6d63b0183",
+  "prompt": "The PDB entry 8B0E describes a co-crystal PREPARED from a certain beta-glucuronidase from Acidobacterium capsulatum and inhibitor X.\n\nProvide the theoretical m/z of the \\[M + NH$\\_4$\\]$^+$ ion of inhibitor X, rounded to 2 decimal places.",
+  "ground_truth": "",
+  "outcome_rubrics": [],
+  "process_rubrics": []
+}

@@ -1,0 +1,7 @@
+{
+  "task_id": "69fa3ea7653acbc6d63b01b2",
+  "prompt": "The PDB entry 6HZC describes the co-crystal structure of furin in complex with a macrocyclic ligand.\n\nTHIS PDB ENTRY EXISTS AND WAS DEPOSITED ON 2018-10-23.\n\nProvide the standard InChIKey of the neutral, non-ionic form of the macrocyclic ligand (entity 2). Assume the all-neutral tautomer.",
+  "ground_truth": "",
+  "outcome_rubrics": [],
+  "process_rubrics": []
+}

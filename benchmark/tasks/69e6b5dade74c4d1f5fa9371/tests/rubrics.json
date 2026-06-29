@@ -1,0 +1,7 @@
+{
+  "task_id": "69e6b5dade74c4d1f5fa9371",
+  "prompt": "In the co-crystal structure described by PDB 7RT5, how many intramolecular hydrogen bond(s) (involving N and/or O only) does the protein-bound ligand 7OE make? Consider only chain A. Provide the final answer as an integer.\n\nH-bond criteria : D...A distance &lt; 3.5 Å, D-H...A angle &gt; 90°.",
+  "ground_truth": "",
+  "outcome_rubrics": [],
+  "process_rubrics": []
+}

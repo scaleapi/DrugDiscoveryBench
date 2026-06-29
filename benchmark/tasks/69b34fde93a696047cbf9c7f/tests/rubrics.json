@@ -1,0 +1,7 @@
+{
+  "task_id": "69b34fde93a696047cbf9c7f",
+  "prompt": "The PDB entry 8B0E describes a co-crystal PREPARED from a certain beta-glucuronidase from Acidobacterium capsulatum and inhibitor X.\n\nProvide the following descriptors of inhibitor X, in exactly this format (including backticks).\n\n`Degree of Unsaturation`, `Exact mass in Da (rounded to 2 decimal places)`",
+  "ground_truth": "",
+  "outcome_rubrics": [],
+  "process_rubrics": []
+}

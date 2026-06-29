@@ -1,0 +1,7 @@
+{
+  "task_id": "69e6b5dade74c4d1f5fa937e",
+  "prompt": "The PDB entry 5KRE describes a co-crystal structure obtained by soaking LYPLAL1 with both compound A and compound B (A and B are enantiomers).\n\nProvide the RDKit canonical SMILES of the compound that actually reacts with LYPLAL1, as described by the co-crystal. Wrap the SMILES string in backticks (i.e. `SMILES`).",
+  "ground_truth": "",
+  "outcome_rubrics": [],
+  "process_rubrics": []
+}

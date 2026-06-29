@@ -1,0 +1,57 @@
+schema_version = "1.1"
+
+# Canonical task.toml template. Copy this directory's files into a new
+# benchmark/tasks/<24-char-hex>/ and fill in the placeholders. The judge
+# credentials below are injected from the host environment by Harbor at run
+# time (see scripts/run_eval.sh and docs/model-proxy.md), so a task file never
+# hardcodes a key, endpoint, or provider-specific model.
+
+[task]
+name = "biomni/<task-id>"
+description = "biomedical research"
+keywords = ["biomni", "scale-data"]
+
+[metadata]
+source_sample = "scale-life-sciences-benchmark"
+
+[environment]
+# Trial container = the biomni image (node + agent CLIs + biomni source + conda
+# env). The agent invokes biomni directly via Bash
+# (`python -c "from biomni.tool.<domain> import ..."`).
+docker_image = "ghcr.io/scaleapi/drugdiscoverybench:1.0.0-lightweight"
+os = "linux"
+cpus = 2
+memory_mb = 8192
+storage_mb = 4096
+allow_internet = true
+
+# Trial container env (the agent runs here).
+[environment.env]
+BIOMNI_DATA_PATH   = "/workspace/data"
+
+[environment.healthcheck]
+# Fail the trial loudly if the egress proxy isn't blocking Scale domains before
+# the agent runs: http://scale.com must return 403 (served by the proxy baked
+# into the biomni image). Requires the published ghcr.io/scaleapi/drugdiscoverybench
+# image -- a self-built image without the proxy will fail this check. See
+# docs/egress-hardening.md. The start period absorbs proxy startup.
+command = 'test "$(curl -s -o /dev/null -w "%{http_code}" --max-time 10 http://scale.com)" = "403"'
+start_period_sec = 30.0
+start_interval_sec = 2.0
+interval_sec = 3.0
+retries = 5
+
+[agent]
+timeout_sec = 2700.0
+
+[verifier]
+timeout_sec = 600.0
+
+# Judge credentials -- any OpenAI-API-compatible endpoint. judge.py (the verifier)
+# reads these. Harbor injects [verifier.env] into the verifier; it does NOT pass
+# [environment.env] to it. run_eval.sh exports JUDGE_* (or derives them from
+# LLM_API_KEY/LLM_BASE_URL); Harbor interpolates ${VAR} (and ${VAR:-default}).
+[verifier.env]
+JUDGE_BASE_URL = "${JUDGE_BASE_URL}"
+JUDGE_API_KEY  = "${JUDGE_API_KEY}"
+JUDGE_MODEL    = "${JUDGE_MODEL:-gpt-4o}"

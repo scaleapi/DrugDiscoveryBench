@@ -1,0 +1,7 @@
+{
+  "task_id": "69b43e08f5a8ac5b38e3c5fb",
+  "prompt": "We're studying the X-ray crystal structure of PI3Kα with an inhibitor X (PDB entry 7K6M). We need to map the hydrogen bond network of X, to rationalize selectivity versus other isoforms. \n\nHow many classical hydrogen bonds (involving N,O; cutoff distance ≤ 3.6 Å, donor-acceptor-acceptor antecedent angle &gt; 100°) does inhibitor X make (include every intermolecular and intramolecular ones)? Give the answer as an integer.",
+  "ground_truth": "",
+  "outcome_rubrics": [],
+  "process_rubrics": []
+}

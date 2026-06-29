@@ -1,0 +1,15 @@
+region_id	cohort	auc	sensitivity_at_90_specificity	assay_readout	valid_samples	screen_specimen
+DMR_001	discovery	0.89	0.68	bisulfite_qPCR_deltaCt	188	plasma_cfDNA
+DMR_001	validation	0.88	0.66	bisulfite_qPCR_deltaCt	214	plasma_cfDNA
+DMR_002	discovery	0.91	0.71	bisulfite_qPCR_deltaCt	188	plasma_cfDNA
+DMR_002	validation	0.83	0.59	bisulfite_qPCR_deltaCt	214	plasma_cfDNA
+DMR_003	discovery	0.92	0.72	bisulfite_qPCR_deltaCt	188	plasma_cfDNA
+DMR_003	validation	0.84	0.61	bisulfite_qPCR_deltaCt	214	plasma_cfDNA
+DMR_004	discovery	0.80	0.48	bisulfite_qPCR_deltaCt	188	plasma_cfDNA
+DMR_004	validation	0.78	0.44	bisulfite_qPCR_deltaCt	214	plasma_cfDNA
+DMR_005	discovery	0.94	0.76	bisulfite_qPCR_deltaCt	188	plasma_cfDNA
+DMR_005	validation	0.93	0.74	bisulfite_qPCR_deltaCt	214	plasma_cfDNA
+DMR_006	discovery	0.90	0.69	bisulfite_qPCR_deltaCt	188	plasma_cfDNA
+DMR_006	validation	0.89	0.67	bisulfite_qPCR_deltaCt	214	plasma_cfDNA
+DMR_007	discovery	0.87	0.64	bisulfite_qPCR_deltaCt	188	plasma_cfDNA
+DMR_007	validation	0.62	0.21	bisulfite_qPCR_deltaCt	214	plasma_cfDNA

@@ -1,0 +1,7 @@
+{
+  "task_id": "69e6b5dade74c4d1f5fa933a",
+  "prompt": "The PDB entry 9C80 describes the co-crystal prepared from SARS-CoV-2 Mpro and inhibitor X.\n\nProvide the RDKit ChEMBL structural alerts of inhibitor X.",
+  "ground_truth": "",
+  "outcome_rubrics": [],
+  "process_rubrics": []
+}

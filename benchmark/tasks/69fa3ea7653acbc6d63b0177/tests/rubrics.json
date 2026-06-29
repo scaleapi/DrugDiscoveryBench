@@ -1,0 +1,7 @@
+{
+  "task_id": "69fa3ea7653acbc6d63b0177",
+  "prompt": "The PDB entry 9L3Q describes the cryo-EM structure of SARS-CoV-2 PT Spike Protein complex with a macrocyclic peptide inhibitor X.\n\nProvide the RDKit canonical SMILES string of the neutral, non-ionic form of inhibitor X in author-assigned chain T, wrapped in backticks (i.e. `SMILES`).",
+  "ground_truth": "",
+  "outcome_rubrics": [],
+  "process_rubrics": []
+}

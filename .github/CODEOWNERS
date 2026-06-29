@@ -1,0 +1,5 @@
+# Code owners for this repository.
+# The frontier-data team owns the entire repo. New PRs auto-request review from
+# this team; it is also the only group permitted to push to `main` (enforced via
+# branch protection, not this file).
+* @scaleapi/frontier-data

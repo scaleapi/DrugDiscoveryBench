@@ -1,0 +1,7 @@
+{
+  "task_id": "69b34fde93a696047cbf9c76",
+  "prompt": "The PDB entry 8GD4 describes a co-crystal structure PREPARED from Danio rerio histone deacetylase 6 catalytic domain 2 and inhibitor X.\n\nCalculate the number of hydrogen bond donors (per Lipinski 1997 definition) of inhibitor X, as an integer.",
+  "ground_truth": "",
+  "outcome_rubrics": [],
+  "process_rubrics": []
+}

@@ -1,0 +1,7 @@
+{
+  "task_id": "69b34fde93a696047cbf9c7c",
+  "prompt": "The PDB entry 7EGU describes a co-crystal structure of human NNMT in complex with macrocyclic peptide X.\n\nProvide the standard InChIKey (neutral, non-ionic form) of macrocyclic peptide X in chain B.",
+  "ground_truth": "",
+  "outcome_rubrics": [],
+  "process_rubrics": []
+}

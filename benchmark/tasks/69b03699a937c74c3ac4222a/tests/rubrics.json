@@ -1,0 +1,7 @@
+{
+  "task_id": "69b03699a937c74c3ac4222a",
+  "prompt": "The PDB entry 7RT2 describes a co-crystal structure of KRAS G12D with inhibitor X.\n\nWhat is the net charge of the protein-bound inhibitor X? Provide the answer as an integer with sign (for example: +1, -3).",
+  "ground_truth": "",
+  "outcome_rubrics": [],
+  "process_rubrics": []
+}

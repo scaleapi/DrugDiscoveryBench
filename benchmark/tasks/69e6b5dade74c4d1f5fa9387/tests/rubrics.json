@@ -1,0 +1,7 @@
+{
+  "task_id": "69e6b5dade74c4d1f5fa9387",
+  "prompt": "The PDB entry 2XOW describes a co-crystal structure of GlpG soaked with a mechanism-based inhibitor X.\n\nWhat is the RDKit TPSA (N and O contributions only) of inhibitor X, in Å, rounded to the nearest integer?",
+  "ground_truth": "",
+  "outcome_rubrics": [],
+  "process_rubrics": []
+}

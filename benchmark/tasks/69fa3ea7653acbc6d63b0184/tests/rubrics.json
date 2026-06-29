@@ -1,0 +1,7 @@
+{
+  "task_id": "69fa3ea7653acbc6d63b0184",
+  "prompt": "The PDB entry 2PIY describes a co-crystal structure of Activated porcine pancreatic carboxypeptidase B with an inhibitor X.\n\nProvide the molecular formula (in Hill notation, including charge if there is any) of inhibitor X in the author-assigned chain A in its protein-bound protonation state. Ignore counterion, if there is any.",
+  "ground_truth": "",
+  "outcome_rubrics": [],
+  "process_rubrics": []
+}

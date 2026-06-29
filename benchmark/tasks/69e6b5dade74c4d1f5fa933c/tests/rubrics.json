@@ -1,0 +1,7 @@
+{
+  "task_id": "69e6b5dade74c4d1f5fa933c",
+  "prompt": "The PDB entry 6NR0 describes a co-crystal structure of SIRT2(56-356) with covalent intermediate between mechanism-based inhibitor X and 1'-SH ADP-ribose.\n\nWhat is the RDKit Crippen LogP of the inhibitor X? Provide the answer as a number rounded to 2 decimal places.",
+  "ground_truth": "",
+  "outcome_rubrics": [],
+  "process_rubrics": []
+}

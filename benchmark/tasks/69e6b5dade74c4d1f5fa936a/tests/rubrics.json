@@ -1,0 +1,7 @@
+{
+  "task_id": "69e6b5dade74c4d1f5fa936a",
+  "prompt": "The PDB entry 9D2K (Deposited: 2024-08-08) described the co-crystal structure of ONE SINGLE UNIQUE inhibitor X with SARS-CoV-2 PLpro. \n\nProvide the ChEMBL LINT structural alert(s) of inhibitor X.",
+  "ground_truth": "",
+  "outcome_rubrics": [],
+  "process_rubrics": []
+}

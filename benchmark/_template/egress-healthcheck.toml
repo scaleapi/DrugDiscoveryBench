@@ -1,0 +1,20 @@
+# Canonical task.toml addition for the egress denylist healthcheck.
+#
+# The trial image runs a small CONNECT-aware forward proxy (HTTP(S)_PROXY is set
+# image-wide, so all container egress routes through it) that blocks a denylist
+# of hosts shipped inside the image. Tasks carry only the healthcheck below,
+# which fails the trial loudly if the proxy isn't blocking those hosts before the
+# agent runs (so an unblocked run never scores silently). The start period
+# absorbs proxy startup.
+#
+# A task may set EGRESS_DENY_HOSTS in its own [environment.env] to extend the
+# blocked list; absent that, the image default applies. New tasks: copy the
+# table below. Existing tasks are kept in sync by scripts/apply_egress_block.sh.
+
+# --- add as its own table (belongs in the [environment] group, before [agent]) ---
+[environment.healthcheck]
+command = 'test "$(curl -s -o /dev/null -w "%{http_code}" --max-time 10 http://scale.com)" = "403"'
+start_period_sec = 30.0
+start_interval_sec = 2.0
+interval_sec = 3.0
+retries = 5

@@ -1,0 +1,51 @@
+schema_version = "1.1"
+
+[task]
+name = "biomni/69b03699a937c74c3ac4222b"
+description = "drug discovery"
+keywords = ["biomni", "scale-data"]
+
+[metadata]
+source_sample = "scale-life-sciences-benchmark"
+
+[environment]
+# Trial container = the biomni image (node + claude-code + codex + biomni
+# source + conda env). The agent invokes biomni directly via Bash
+# (`python -c "from biomni.tool.<domain> import ..."`).
+docker_image = "ghcr.io/scaleapi/drugdiscoverybench:1.0.0-lightweight"
+os = "linux"
+cpus = 2
+memory_mb = 8192
+storage_mb = 4096
+allow_internet = true
+
+# Trial container env (the agent runs here).
+[environment.env]
+BIOMNI_DATA_PATH   = "/workspace/data"
+
+[environment.healthcheck]
+# Fail the trial loudly if the egress proxy isn't blocking Scale domains before
+# the agent runs: http://scale.com must return 403 (served by the proxy baked
+# into the biomni image). curl honors the lowercase http_proxy env set in the
+# image. The start period absorbs proxy startup (a few seconds, e.g. under qemu):
+# during it, failures don't count and Harbor re-checks every start_interval_sec.
+command = 'test "$(curl -s -o /dev/null -w "%{http_code}" --max-time 10 http://scale.com)" = "403"'
+start_period_sec = 30.0
+start_interval_sec = 2.0
+interval_sec = 3.0
+retries = 5
+
+[agent]
+timeout_sec = 7200.0
+
+[verifier]
+timeout_sec = 600.0
+
+# Judge credentials -- any OpenAI-API-compatible endpoint. judge.py (the verifier)
+# reads these. Harbor injects [verifier.env] into the verifier; it does NOT pass
+# [environment.env] to it. run_eval.sh exports JUDGE_* (or derives them from
+# LLM_API_KEY/LLM_BASE_URL); Harbor interpolates ${VAR} (and ${VAR:-default}).
+[verifier.env]
+JUDGE_BASE_URL = "${JUDGE_BASE_URL}"
+JUDGE_API_KEY  = "${JUDGE_API_KEY}"
+JUDGE_MODEL    = "${JUDGE_MODEL:-gpt-4o}"

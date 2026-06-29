@@ -1,0 +1,7 @@
+{
+  "task_id": "69b43e08f5a8ac5b38e3c637",
+  "prompt": "What is the net formal charge of the bound inhibitor X in its co-crystal structure with HIV RT, as depicted by PDB ID: 5J1E ? Provide the answer as an integer, with sign (for example: +3, -5).",
+  "ground_truth": "",
+  "outcome_rubrics": [],
+  "process_rubrics": []
+}

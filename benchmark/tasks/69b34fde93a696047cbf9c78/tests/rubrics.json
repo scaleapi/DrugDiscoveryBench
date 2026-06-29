@@ -1,0 +1,7 @@
+{
+  "task_id": "69b34fde93a696047cbf9c78",
+  "prompt": "For the immunometabolic orphan receptor GPR84, create a table of compounds that have been investigated in clinical trials as of March 25, 2026. Report the following information: (a) Compound name, (b) Bioactivity against GPR84 (agonist, antagonist /NAM), (c) Indication(s) (d) Most Advanced Phase. Create one entry per compound and order alphabetically.",
+  "ground_truth": "",
+  "outcome_rubrics": [],
+  "process_rubrics": []
+}

@@ -1,0 +1,7 @@
+{
+  "task_id": "69b43e08f5a8ac5b38e3c603",
+  "prompt": "We're studying the X-ray crystal structure of a certain HDAC6 mutant with inhibitor X (PDB ID: 6UO5).\n\nWhat is the coordination number (chemically interpreted) of the $Zn^{2+}$ center in the crystal ? Provide the answer as an integer.",
+  "ground_truth": "",
+  "outcome_rubrics": [],
+  "process_rubrics": []
+}
