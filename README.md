@@ -1,4 +1,10 @@
 <p align="center">
+  <img src="assets/scale-logo.png" alt="Scale" height="44">
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="assets/phylo-logo.png" alt="Phylo" height="44">
+</p>
+
+<p align="center">
   <h1 align="center">Drug Discovery Agent Benchmark</h1>
 </p>
 
