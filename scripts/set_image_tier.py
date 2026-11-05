@@ -9,13 +9,13 @@ databases into the image for offline, deterministic runs (~74% / ~99.7% of
 ``query_*`` calls served locally). This rewrites the tier tag across every task and
 the ``_template`` in place.
 
-    ghcr.io/scaleapi/drugdiscoverybench:1.0.0-lightweight   (default)
-    ghcr.io/scaleapi/drugdiscoverybench:1.0.0-core
-    ghcr.io/scaleapi/drugdiscoverybench:1.0.0-full
+    ghcr.io/scaleapi/drugdiscoverybench:1.0.2-lightweight   (default)
+    ghcr.io/scaleapi/drugdiscoverybench:1.0.2-core
+    ghcr.io/scaleapi/drugdiscoverybench:1.0.2-full
 
 Usage
 -----
-    python scripts/set_image_tier.py core          # pin all tasks to 1.0.0-core
+    python scripts/set_image_tier.py core          # pin all tasks to 1.0.2-core
     python scripts/set_image_tier.py lightweight   # back to the default
     python scripts/set_image_tier.py full --dry-run
 
@@ -31,7 +31,7 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parent.parent
 DEFAULT_BENCH = REPO / "benchmark"
 DEFAULT_IMAGE = "ghcr.io/scaleapi/drugdiscoverybench"
-DEFAULT_VERSION = "1.0.0"
+DEFAULT_VERSION = "1.0.2"
 TIERS = ("lightweight", "core", "full")
 
 
