@@ -12,7 +12,7 @@ source_sample = "scale-life-sciences-benchmark"
 # Trial container = the biomni image (node + claude-code + codex + biomni
 # source + conda env). The agent invokes biomni directly via Bash
 # (`python -c "from biomni.tool.<domain> import ..."`).
-docker_image = "ghcr.io/scaleapi/drugdiscoverybench:1.0.0-lightweight"
+docker_image = "ghcr.io/scaleapi/drugdiscoverybench:1.0.2-lightweight"
 os = "linux"
 cpus = 2
 memory_mb = 8192

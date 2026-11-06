@@ -5,5 +5,5 @@
 # container *is* biomni. No MCP: the agent invokes biomni directly via Bash
 # (`python -c "from biomni.tool.<domain> import ..."`); `/workspace` is the
 # shared working directory.
-FROM ghcr.io/scaleapi/drugdiscoverybench:1.0.0-lightweight
+FROM ghcr.io/scaleapi/drugdiscoverybench:1.0.2-lightweight
 WORKDIR /workspace

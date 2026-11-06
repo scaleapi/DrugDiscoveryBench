@@ -24,7 +24,7 @@ benchmark/
 
 ## Trial container architecture
 
-Each trial container **is** the BiOMNI image (`ghcr.io/scaleapi/drugdiscoverybench:1.0.0-lightweight`).
+Each trial container **is** the BiOMNI image (`ghcr.io/scaleapi/drugdiscoverybench:1.0.2-lightweight`).
 One `docker pull` gets:
 
 - The BiOMNI conda env + Python source + the BiOMNI tool suite
@@ -69,9 +69,9 @@ met negative penalties and `possible` sums all positive weights.
 ## Data lake
 
 The image ships in three tiers (see the root [README](../README.md#data-lake) for
-the full table). Tasks pin **`1.0.0-lightweight`**, which bakes no data lake — tools
-fall back to live public APIs. The **`1.0.0-core`** (~21 local DBs, ~74% offline)
-and **`1.0.0-full`** (+ PubChem/PubMed/AlphaFold/Open Targets, ~99.7%) tiers bake
+the full table). Tasks pin **`1.0.2-lightweight`**, which bakes no data lake — tools
+fall back to live public APIs. The **`1.0.2-core`** (~21 local DBs, ~74% offline)
+and **`1.0.2-full`** (+ PubChem/PubMed/AlphaFold/Open Targets, ~99.7%) tiers bake
 the databases into the image at `/workspace/data/biomni_data/data_lake/` for
 offline, deterministic runs.
 

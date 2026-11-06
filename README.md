@@ -26,13 +26,13 @@ Software you install on the **host**:
 | Docker (Desktop or Engine) | **24+**, with the **Compose v2** plugin | Runs every trial; Harbor's docker executor uses `docker compose`. Must be **running** before you start. [Docker Desktop](https://docs.docker.com/get-started/get-docker/) / [Engine](https://docs.docker.com/engine/install/). Tested with Docker 29.x. |
 | Python (host) | **3.10–3.13** | Host interpreter for the Harbor CLI. (LiteLLM, a Harbor dependency, caps at `<3.14`.) `python3 --version`. |
 | Harbor | **`0.13.1`** | The eval runner — `pip install harbor==0.13.1` (or `uv tool install harbor@0.13.1`). Pinned for reproducibility. |
-| Trial image | `ghcr.io/scaleapi/drugdiscoverybench:1.0.0-lightweight` | Pulled in [step 1](#1-pull-the-docker-image-6-gb-1030-min). |
+| Trial image | `ghcr.io/scaleapi/drugdiscoverybench:1.0.2-lightweight` | Pulled in [step 1](#1-pull-the-docker-image-6-gb-1030-min). |
 
 **Host resources:** the image is **~6 GB compressed to pull but ~23 GB on disk** (**30+ GB free recommended**); each task can use up to **8 GB RAM** (**16 GB total recommended**).
 
 **Time:** first-time setup ~30–60 min (the ~6 GB pull dominates); a single task run takes up to ~45 min (agent timeout 45 min, judge 10 min).
 
-You do **not** install the biomedical toolchain or agent CLIs — they're baked into the `1.0.0-lightweight` image at pinned versions: conda env (Python 3.11) + R + the BiOMNI tool suite, Node 22, `@anthropic-ai/claude-code` 2.1.190, `@openai/codex` 0.122.0, `@google/gemini-cli` 0.46.0 (see [What's in the image](#whats-in-the-image)).
+You do **not** install the biomedical toolchain or agent CLIs — they're baked into the `1.0.2-lightweight` image at pinned versions: conda env (Python 3.11) + R + the BiOMNI tool suite, Node 22, `@anthropic-ai/claude-code` 2.1.190, `@openai/codex` 0.122.0, `@google/gemini-cli` 0.46.0 (see [What's in the image](#whats-in-the-image)).
 
 ## Quick Start
 
@@ -40,7 +40,7 @@ You do **not** install the biomedical toolchain or agent CLIs — they're baked 
 
 ```bash
 # Public image — no login required.
-docker pull ghcr.io/scaleapi/drugdiscoverybench:1.0.0-lightweight
+docker pull ghcr.io/scaleapi/drugdiscoverybench:1.0.2-lightweight
 ```
 
 ### 2. Clone this repo and install Harbor
@@ -235,7 +235,7 @@ agent and the full tool surface live in the same container.
 
 ## What's in the image
 
-The `drugdiscoverybench:1.0.0-lightweight` Docker image (**~6 GB compressed to pull,
+The `drugdiscoverybench:1.0.2-lightweight` Docker image (**~6 GB compressed to pull,
 ~23 GB on disk**) is a self-contained trial environment built on
 [BiOMNI](https://github.com/snap-stanford/Biomni), with our own fixes and improvements
 on top (dependency/tool repairs, agent-CLI co-location, egress hardening, and more):
@@ -245,7 +245,7 @@ on top (dependency/tool repairs, agent-CLI co-location, egress hardening, and mo
 | BiOMNI source | Full Python package with the BiOMNI tool suite across 17 domains |
 | Conda env | `biomni_e1` with Python 3.11, R, bioinformatics CLI tools |
 | Agent CLIs | Node 22 — `@anthropic-ai/claude-code`, `@openai/codex`, `@google/gemini-cli` (plus a Grok binary, see [Appendix: Grok CLI](#appendix-grok-cli)) |
-| Data lake | `1.0.0-lightweight` (default) bakes the **eval data-lake files** (read-only at `/workspace/data/biomni_data/data_lake/`); `query_*` DB clients still hit live APIs. `core`/`full` add local `query_*` databases (see [Data lake](#data-lake)) |
+| Data lake | `1.0.2-lightweight` (default) bakes the **eval data-lake files** (read-only at `/workspace/data/biomni_data/data_lake/`); `query_*` DB clients still hit live APIs. `core`/`full` add local `query_*` databases (see [Data lake](#data-lake)) |
 
 ## Repository Layout
 
@@ -291,11 +291,11 @@ The image comes in three tiers that trade size for offline coverage:
 
 | Tier (tag) | Baked data | Pull / on-disk | Offline DB coverage |
 |------------|-----------|----------------|---------------------|
-| **`1.0.0-lightweight`** (default) | The Biomni **data-lake files used by the eval** (read-only at `/workspace/data/biomni_data/data_lake/`) — curated flat-file datasets (BindingDB, GTEx, DepMap, GWAS Catalog, MSigDB, …). Heavy `query_*` DB clients (PubChem, ChEMBL, UniProt, …) still hit **live APIs**. | ~6 GB / ~23 GB | data-lake files (`query_*` live) |
-| **`1.0.0-core`** | ~21 local databases — cBioPortal, UniProt, ChEMBL, ENCODE, Ensembl, ClinicalTrials (AACT), STRING, openFDA, Reactome, GEO, GWAS, PDB, … (`BIOMNI_LOCAL_DB_ONLY=1`) | 37 GB / 211 GB | ~74% |
-| **`1.0.0-full`** | `core` + PubChem, PubMed, AlphaFold, Open Targets | 136 GB / 570 GB | ~99.7% |
+| **`1.0.2-lightweight`** (default) | The Biomni **data-lake files used by the eval** (read-only at `/workspace/data/biomni_data/data_lake/`) — curated flat-file datasets (BindingDB, GTEx, DepMap, GWAS Catalog, MSigDB, …). Heavy `query_*` DB clients (PubChem, ChEMBL, UniProt, …) still hit **live APIs**. | ~6 GB / ~23 GB | data-lake files (`query_*` live) |
+| **`1.0.2-core`** | ~21 local databases — cBioPortal, UniProt, ChEMBL, ENCODE, Ensembl, ClinicalTrials (AACT), STRING, openFDA, Reactome, GEO, GWAS, PDB, … (`BIOMNI_LOCAL_DB_ONLY=1`) | 37 GB / 211 GB | ~74% |
+| **`1.0.2-full`** | `core` + PubChem, PubMed, AlphaFold, Open Targets | 136 GB / 570 GB | ~99.7% |
 
-> **All 82 tasks pin `1.0.0-lightweight`.** It bakes the data-lake files the eval
+> **All 82 tasks pin `1.0.2-lightweight`.** It bakes the data-lake files the eval
 > uses, so those file reads are offline and reproducible (matching how the benchmark
 > was run). The heavy `query_*` database clients (PubChem, ChEMBL, UniProt, …) still
 > hit live public APIs on `lightweight`; the `core` and `full` tiers bake those
@@ -369,7 +369,7 @@ grok is only a runnable binary inside the container (manual / non-Harbor use):
 
 ```bash
 docker run --rm -it -e GROK_API_KEY=your-key \
-    ghcr.io/scaleapi/drugdiscoverybench:1.0.0-lightweight grok --help
+    ghcr.io/scaleapi/drugdiscoverybench:1.0.2-lightweight grok --help
 ```
 
 It reads `GROK_API_KEY` and `GROK_BASE_URL` (default `https://api.x.ai/v1`; an
